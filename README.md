@@ -1,4 +1,4 @@
-# Climate Change Adaptation Analysis for Berlin
+# Climate Change Adaptation Analysis for Berlin 🌳
 This repo documents the code used in the Le Wagon final project 'Green_Cities_Now'. Goal of the project was to
 train a classification model on building block data from the Berlin Open Data Portal, to predict the probability
 of climate change adaptation measures being implemented.
