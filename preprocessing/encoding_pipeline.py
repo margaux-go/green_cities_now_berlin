@@ -10,7 +10,7 @@ def processing_pipe(X):
     #Categorical Encoder Piece of Pipeline
 
     ordinal_vals_1 = ['air_pollut']
-    ordinal_vals_2 = ['social_stat']
+    ordinal_vals_2 = ['social_sta']
     ordinal_vals_3 = ['social_dyn']
     ordinal_vals_4 = ['thermal_st']
     cat_vals = ['usetype_bl','district','built_type']
@@ -41,7 +41,7 @@ def processing_pipe(X):
 
     #Numerical Scaler Piece of Pipeline
     num_transf_1 = make_pipeline(SimpleImputer(), StandardScaler())
-    num_pipe = make_column_transformer((num_transf_1, make_column_selector(dtype_include=['float32','bool'])))
+    num_pipe = make_column_transformer((num_transf_1, make_column_selector(dtype_include=['float64','bool'])))
 
     #Combining Pieces to Form Final Pipeline
     combined_encoding = make_union(num_pipe, cat_pipe)
