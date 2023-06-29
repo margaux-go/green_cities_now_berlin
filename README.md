@@ -41,7 +41,7 @@ In total, the final cleaned dataset consisted of 15 features, and the building b
 # Model
 In search of the most efficient model for our case, we crossvalidated several models and based on
 
-# Working with our code
+# Working with our code (to be updated)
 
 Go to `https://github.com/{group}/newpkgname` to see the project, manage issues,
 setup you ssh public key, ...
