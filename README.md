@@ -20,7 +20,7 @@ The code to the front-end application is stored in the following repo:
 The data used in this project to train the classification model consists of several datasets
 from the Berlin Open Data Portal that were merged at building block scale.
 
-link to raw data files can be found here:
+Link to raw data files can be found here:
 - GOOGLE CLOUD FOLDER LINK
 
 The merged datasets included the following (Originally published in German):
@@ -33,7 +33,7 @@ The merged datasets included the following (Originally published in German):
 - "Wohnatlas Berlin 2020" (Rent statistics)
 - Green Roofing Subsidy programme postal code areas (As described in the official documentation: 'Förderrichtlinie zum Programm "GründachPLUS")
 
-Before encoding and scaling of the data, the dataset was further cleaned (using the 'preprocess_dataframe' function in the data_cleaning.ipynb). This was necessary, due to unbuilt-areas, such as parks causing a larger number of missing values. Additionally, the choice was made to drop a number of features that did not seem to offer additional information beyond already existing, broader scale features (e.g. 'number of townhouses' vs 'residential' usetype). This pre-processing step can be easily adjusted to include more or fewer features.
+Before encoding and scaling of the data, the dataset was further cleaned (using the 'preprocess_dataframe' function in the data_cleaning.ipynb). This was necessary, due to unbuilt-areas, such as parks, causing a larger number of missing values. Additionally, the choice was made to drop a number of features that did not seem to offer additional information beyond already existing, broader scale features (e.g. 'number of townhouses' vs 'residential' usetype). This pre-processing step can be easily adjusted to include more or fewer features.
 
 In total, the final cleaned dataset consisted of 15 features, and the building block coordinates for 18,015 blocks in Berlin. A description of each variable with the label names can be found here:
 - https://docs.google.com/spreadsheets/d/1Tsb1AojBWzbf_F6zUKElSugQRQkiqckQYKOMtTAgXZU/edit?usp=sharing
