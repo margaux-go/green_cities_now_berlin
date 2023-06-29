@@ -1,14 +1,12 @@
-
-from sklearn.preprocessing import StandardScaler, FunctionTransformer, OrdinalEncoder, OneHotEncoder
+from sklearn.preprocessing import StandardScaler, OrdinalEncoder, OneHotEncoder
 from sklearn.compose import ColumnTransformer, make_column_transformer, make_column_selector
 from sklearn.impute import SimpleImputer
-from sklearn.pipeline import Pipeline, make_pipeline, make_union
+from sklearn.pipeline import make_pipeline, make_union
 
 
 def processing_pipe(X):
 
     #Categorical Encoder Piece of Pipeline
-
     ordinal_vals_1 = ['air_pollut']
     ordinal_vals_2 = ['social_stat']
     ordinal_vals_3 = ['social_dyn']
@@ -37,7 +35,6 @@ def processing_pipe(X):
         ('ordinal_transformer_4', pipeline_3, ordinal_vals_4),
         ('categorical_transformer', cat_transformer, cat_vals)
     ])
-
 
     #Numerical Scaler Piece of Pipeline
     num_transf_1 = make_pipeline(SimpleImputer(), StandardScaler())
