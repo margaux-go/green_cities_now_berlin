@@ -38,34 +38,16 @@ Before encoding and scaling of the data, the dataset was further cleaned (using 
 In total, the final cleaned dataset consisted of 15 features, and the building block coordinates for 18,015 blocks in Berlin. Encoding of features resulted in a total number of 75 features to be used in model-training. A description of each variable with the label names can be found here:
 - https://docs.google.com/spreadsheets/d/1Tsb1AojBWzbf_F6zUKElSugQRQkiqckQYKOMtTAgXZU/edit?usp=sharing
 
+The target variable 'green_roof', is defined by any building block, where more than 15% of the building footprint area is greened.
+
 # Model
-In search of the most efficient model for our case, we crossvalidated several models and based on
+In search of the most efficient model for our case, we cross-validated several models. Based on the auc-score, we selected and tuned a GradientBoostingClassifier. The process of selection and training can be found in the 'model_selection' and 'model' notebooks. The final model is exported as a pickle file, to be found in the pickle folder.
 
-# Working with our code (to be updated)
+Due to the dataset being quite unbalanced, a classification thresshold of 0.02 was implemented. Resulting in the final model being capable of predicting 87.94 % of the of the green roofs and 89.40% of the non-green roofs correctly.
 
-Go to `https://github.com/{group}/newpkgname` to see the project, manage issues,
-setup you ssh public key, ...
+# Questions?
 
-Create a python3 virtualenv and activate it:
-
-```bash
-sudo apt-get install virtualenv python-pip python-dev
-deactivate; virtualenv -ppython3 ~/venv ; source ~/venv/bin/activate
-```
-
-Clone the project and install it:
-
-```bash
-git clone git@github.com:{group}/newpkgname.git
-cd newpkgname
-pip install -r requirements.txt
-make clean install test                # install and test
-```
-Functionnal test with a script:
-
-```bash
-cd
-mkdir tmp
-cd tmp
-newpkgname-run
-```
+If you have any questions, feel free to contact us on linkedin:
+- Margaux: https://www.linkedin.com/in/margaux-huth/
+- Raquel: https://www.linkedin.com/in/raquelbrasileiro/
+- Juanes: https://www.linkedin.com/in/juan-esteban-hoyos-g/
