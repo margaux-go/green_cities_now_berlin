@@ -20,8 +20,8 @@ The code to the front-end application is stored in the following repo:
 The data used in this project to train the classification model consists of several datasets
 from the Berlin Open Data Portal that were merged at building block scale.
 
-Link to raw data files can be found here:
-- GOOGLE CLOUD FOLDER LINK
+Link to raw data files can be found here (download into raw_data folder):
+- https://drive.google.com/drive/folders/1rdh1HcbbfJZ5bLnFTM1krVcSbnqD6k-a?usp=sharing 
 
 The merged datasets included the following (Originally published in German):
 - "Gebäudealter der Wohnbebauung" (Building Age)
