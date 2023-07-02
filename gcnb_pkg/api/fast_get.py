@@ -3,11 +3,12 @@ from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 import pickle
 #add import of processing function
+from gcnb_pkg.preprocessing.encoding_pipeline import processing_pipe
 
 app = FastAPI()
 
-final_pipe = pickle.load(open('model/final_pipe.pkl', 'rb')) ###change code to use function in processing.py
-model = pickle.load(open('model/model_15.pkl', 'rb'))  ### change to correct and final model pkl
+final_pipe = pickle.load(open('../../pickle/final_pipe.pkl', 'rb'))
+model = pickle.load(open('../../pickle/model.pkl', 'rb'))
 
 # Allowing all middleware is optional, but good practice for dev purposes
 ### (what to we need this for?)
@@ -21,49 +22,48 @@ app.add_middleware(
 
 @app.get("/predict")
 def predict_features(
-    usetype_block: str,
+    usetype_bl: str,
     district: str,
     built_type: str,
     residents: float,
-    air_pollution: str,
-    thermal_stress: str,
-    social_status: str,
+    air_pollut: str,
+    thermal_st: str,
+    social_sta: str,
     social_dyn: str,
     rent: float,
-    unemp_benef: float,
+    unemp_bene: float,
     social_hou: float,
     hous_assoc: float,
-    rent_duration: float,
-    aparts_sold: float,
+    rent_durat: float,
+    aparts_sol: float,
     subsidized: bool):
 
 
     input = pd.DataFrame(dict(
-        usetype_block=[usetype_block],
+        usetype_bl=[usetype_bl],
         district=[district],
         built_type=[built_type],
         residents=[residents],
-        air_pollution=[air_pollution],
-        thermal_stress=[thermal_stress],
-        social_status=[social_status],
+        air_pollut=[air_pollut],
+        thermal_st=[thermal_st],
+        social_sta=[social_sta],
         social_dyn=[social_dyn],
         rent=[rent],
-        unemp_benef=[unemp_benef],
+        unemp_bene=[unemp_bene],
         social_hou=[social_hou],
         hous_assoc=[hous_assoc],
-        rent_duration=[rent_duration],
-        aparts_sold=[aparts_sold],
+        rent_durat=[rent_durat],
+        aparts_sol=[aparts_sol],
         subsidized=[subsidized]))
 
 
-    preproc_X = final_pipe.transform(input)  ### change to use preprocessing function
+    preproc_X = final_pipe.transform(input)
 
     prediction = model.predict(preproc_X)
 
     return bool(prediction)
 
 
-### can we delete this?
 @app.get("/")
 def root():
     return {'greeting': 'Hello'}

@@ -5,9 +5,9 @@ with open("requirements.txt") as f:
     content = f.readlines()
 requirements = [x.strip() for x in content if "git+" not in x]
 
-setup(name='preprocessing',
+setup(name='gcnb_pkg',
       version="0.0.1",
-      description="Green Cities model preprocessing pipeline",
+      description="Green Cities now berlin package",
       license="MIT",
       author="Team green-cities",
       author_email="n",
