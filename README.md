@@ -21,7 +21,7 @@ The data used in this project to train the classification model consists of seve
 from the Berlin Open Data Portal that were merged at building block scale.
 
 Link to raw data files can be found here (download into raw_data folder):
-- https://drive.google.com/drive/folders/1rdh1HcbbfJZ5bLnFTM1krVcSbnqD6k-a?usp=sharing 
+- https://drive.google.com/drive/folders/1rdh1HcbbfJZ5bLnFTM1krVcSbnqD6k-a?usp=sharing
 
 The merged datasets included the following (Originally published in German):
 - "Gebäudealter der Wohnbebauung" (Building Age)
@@ -45,9 +45,22 @@ In search of the most efficient model for our case, we cross-validated several m
 
 Due to the dataset being quite unbalanced, a classification thresshold of 0.02 was implemented. Resulting in the final model being capable of predicting 87.94 % of the of the green roofs and 89.40% of the non-green roofs correctly.
 
+# Instructions
+The following sequence of steps should setup the code and illustrate its functionalities:
+- Clone the repository with *git clone git@github.com:margaux-go/green_cities_now_berlin.git*
+- At the folder green_cities_now_berlin create a subfolder raw_data with *mkdir raw_data* and download the raw data with the link ...
+- We suggest the creation of a virtual environment for the project to avoid dependency issues. At the folder green_cities_now_berlin
+run *pyenv virtualenv <env_name>* followed by *pyenv local <env_name>*
+- At the folder green_cities_now_berlin install necessary packages with *make install*
+- To clean the data run the notebook
+- To train the model and export it to be used by the API, first create a subfolder called pickle inside the folder green_cities_now_berlin, then open the notebook model.ipynb and execute the cells in order. Do not forget to uncomment the cell with comment "# Create model pickle file" to export the model as a pickle file.
+- To test the API locally, first run *uvicorn fast_get:app --reload* at the folder api and then run the cells in the notebook api_local_test.ipynb.
+
+
 # Questions?
 
 If you have any questions, feel free to contact us on linkedin:
 - Margaux: https://www.linkedin.com/in/margaux-huth/
 - Raquel: https://www.linkedin.com/in/raquelbrasileiro/
 - Juanes: https://www.linkedin.com/in/juan-esteban-hoyos-g/
+- Clauson: https://www.linkedin.com/in/clauson-da-silva/

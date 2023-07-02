@@ -5,3 +5,4 @@ fastapi
 matplotlib
 uvicorn
 requests
+jupyterlab
