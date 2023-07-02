@@ -3,3 +3,5 @@ geopandas
 scikit-learn
 fastapi
 matplotlib
+uvicorn
+requests

@@ -2,9 +2,10 @@ from sklearn.preprocessing import StandardScaler, OrdinalEncoder, OneHotEncoder
 from sklearn.compose import ColumnTransformer, make_column_transformer, make_column_selector
 from sklearn.impute import SimpleImputer
 from sklearn.pipeline import make_pipeline, make_union
+import pickle
 
 
-def processing_pipe(X):
+def processing_pipe(X, export : bool = False):
 
     #Categorical Encoder Piece of Pipeline
     ordinal_vals_1 = ['air_pollut']
@@ -46,5 +47,10 @@ def processing_pipe(X):
     final_pipe = ColumnTransformer([('combined_pipe', combined_encoding, X.columns)], remainder='passthrough')
 
     processed_X = final_pipe.fit_transform(X)
+
+    #Export final pipeline
+    if bool:
+        final_pipe_file = "../pickle/final_pipe.pkl"
+        pickle.dump(final_pipe, open(final_pipe_file, 'wb'))
 
     return processed_X
