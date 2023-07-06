@@ -51,12 +51,12 @@ The following sequence of steps should setup the code and illustrate its functio
 - At the folder green_cities_now_berlin create a subfolder raw_data with *mkdir raw_data* and download the raw data to this subfolder with the link ... . Furthermore create a subfolder pickle in which preprocess pipeline and trained model will be saved.
 - We suggest the creation of a virtual environment for the project to avoid dependency issues. At the folder green_cities_now_berlin
 run *pyenv virtualenv <env_name>* followed by *pyenv local <env_name>*
-- At the folder green_cities_now_berlin run with *make install* to install necessary packages.
-- At the folder green_cities_now_berlin run *make run_preprocess* to preprocess the raw_data. It will clean the raw_data
+- At the folder green_cities_now_berlin, run *make install* to install necessary packages.
+- At the folder green_cities_now_berlin, run *make run_preprocess* to preprocess the raw_data. It will clean the raw_data
 and export the clean data for visualization purposes. Furthermore, it fits a preprocessing pipeline to the clean data,
 and exports to be used by the API.
-
-- To train the model and export it to be used by the API, first create a subfolder called pickle inside the folder green_cities_now_berlin, then open the notebook model.ipynb and execute the cells in order. Do not forget to uncomment the cell with comment "# Create model pickle file" to export the model as a pickle file.
+- At the folder green_cities_now_berlin, run *make run_train* to train the model and export it to be used by the API.
+- At the folder green_cities_now_berlin, run *make run_evaluate* to see model evaluation.
 - To test the API locally, first run *uvicorn fast_get:app --reload* at the folder api and then run the cells in the notebook api_local_test.ipynb.
 
 

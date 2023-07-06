@@ -52,6 +52,9 @@ def clean_data(df_raw):
     return df
 
 def processing_pipe(X):
+    """
+    Add docstring here
+    """
 
     #Categorical Encoder Piece of Pipeline
     ordinal_vals_1 = ['air_pollution']
@@ -85,21 +88,11 @@ def processing_pipe(X):
 
     #Numerical Scaler Piece of Pipeline
     num_transf_1 = make_pipeline(SimpleImputer(), StandardScaler())
-    num_pipe = make_column_transformer((num_transf_1, make_column_selector(dtype_include=['float64','bool'])))
+    num_pipe = make_column_transformer((num_transf_1, make_column_selector(dtype_include=['float32','bool'])))
 
     #Combining Pieces to Form Final Pipeline
     combined_encoding = make_union(num_pipe, cat_pipe)
 
     final_pipe = ColumnTransformer([('combined_pipe', combined_encoding, X.columns)], remainder='passthrough').fit(X)
-
-    #REMOVE IT HERE AT DUE TIME
-    #processed_X = final_pipe.fit_transform(X)
-
-    #Export final pipeline
-    #if bool:
-    #    final_pipe_file = "../pickle/final_pipe.pkl"
-    #    pickle.dump(final_pipe, open(final_pipe_file, 'wb'))
-
-    #return processed_X
 
     return final_pipe
