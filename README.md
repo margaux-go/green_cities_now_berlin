@@ -48,7 +48,7 @@ Due to the dataset being quite unbalanced, a classification thresshold of 0.02 w
 # Instructions
 The following sequence of steps should setup the code and illustrate its functionalities:
 - Clone the repository with *git clone git@github.com:margaux-go/green_cities_now_berlin.git*
-- At the folder green_cities_now_berlin create a subfolder raw_data with *mkdir raw_data* and download the raw data to this subfolder with the link ... . Furthermore create a subfolder pickle in which preprocess pipeline and trained model will be saved.
+- At the folder green_cities_now_berlin create a subfolder raw_data with *mkdir raw_data* and download the raw data to this subfolder from the first link under the 'Data' section. Furthermore create a subfolder 'pickle' in which preprocess pipeline and trained model will be saved.
 - We suggest the creation of a virtual environment for the project to avoid dependency issues. At the folder green_cities_now_berlin
 run *pyenv virtualenv <env_name>* followed by *pyenv local <env_name>*
 - At the folder green_cities_now_berlin, run *make install* to install necessary packages.
