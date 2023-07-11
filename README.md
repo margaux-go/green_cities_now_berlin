@@ -57,8 +57,9 @@ and export the clean data for visualization purposes. Furthermore, it fits a pre
 and exports to be used by the API.
 - At the folder green_cities_now_berlin, run *make run_train* to train the model and export it to be used by the API.
 - At the folder green_cities_now_berlin, run *make run_evaluate* to see model evaluation.
-- To test the API locally, first run *uvicorn fast_get:app --reload* at the folder api and then run the cells in the notebook api_local_test.ipynb.
-
+- To test the API locally, first run *uvicorn fast_get:app --reload* at the folder api and then run the cells in the api_local_test.ipynb Jupyter notebook.
+- The Jupyter notebook interface_explore.ipynb presents a break down of the gcnb package and visualization of the data.
+- We also offer a docker image for containerization.
 
 # Questions?
 
