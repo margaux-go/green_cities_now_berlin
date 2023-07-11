@@ -1,8 +1,8 @@
-pandas
-geopandas
-scikit-learn
-fastapi
-matplotlib
-uvicorn
-requests
+pandas==2.0.2
+geopandas==0.13.2
+scikit-learn==1.2.2
+fastapi==0.99.0
+matplotlib==3.7.1
+uvicorn==0.22.0
+requests==2.31.0
 jupyterlab
